@@ -10,8 +10,7 @@ from os import path
 import sqlite3
 import schedule
 from datetime import datetime
-from selenium.webdriver.common.action_chains import ActionChains
-import discord_webhook
+from selenium.webdriver.common.action_chains import ActionChain
 
 opt = Options()
 opt.add_argument("--disable-infobars")
@@ -40,21 +39,10 @@ def login():
 	#login required
 	print("logging in")
 	emailField = driver.find_element_by_xpath('//*[@id="i0116"]')
-	emailField.click()
-	emailField.send_keys(CREDS['email'])
-	driver.find_element_by_xpath('//*[@id="idSIButton9"]').click() #Next button
-	time.sleep(3)
-	passwordField = driver.find_element_by_xpath('//*[@id="i0118"]')
-	passwordField.click()
-	passwordField.send_keys(CREDS['passwd'])
-	driver.find_element_by_xpath('//*[@id="idSIButton9"]').click() #Sign in button
-	time.sleep(3)
-	driver.find_element_by_xpath('//*[@id="idSIButton9"]').click() #remember login
-	time.sleep(3)
-	# return driver
 
 
-def createDB():
+
+def createDB(
 	conn = sqlite3.connect('timetable.db')
 	c=conn.cursor()
 	# Create table
