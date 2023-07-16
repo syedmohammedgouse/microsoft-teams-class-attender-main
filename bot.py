@@ -136,6 +136,10 @@ def joinclass(class_name,start_time,end_time):
 		joinbtn = driver.find_element_by_class_name("ts-calling-join-button")
 		joinbtn.click()
 
+	try:
+		joinbtn = driver.find_element_by_class_name("ts-calling-join-button")
+		joinbtn.click()
+
 	except:
 		#join button not found
 		#refresh every minute until found
