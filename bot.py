@@ -25,6 +25,22 @@ opt.add_experimental_option("prefs", { \
     "profile.default_content_setting_values.notifications": 1 
   })
 
+
+
+
+opt = Options()
+opt.add_argument("--disable-infobars")
+opt.add_argument("start-maximized")
+opt.add_argument("--disable-extensions")
+opt.add_argument("--start-maximized")
+# Pass the argument 1 to allow and 2 to block
+opt.add_experimental_option("prefs", { \
+    "profile.default_content_setting_values.media_stream_mic": 1, 
+    "profile.default_content_setting_values.media_stream_camera": 1,
+    "profile.default_content_setting_values.geolocation": 1, 
+    "profile.default_content_setting_values.notifications": 1 
+  })
+
 # driver = webdriver.Chrome(chrome_options=opt,service_log_path='NUL')
 driver = None
 #URL = "https://teams.microsoft.com"
